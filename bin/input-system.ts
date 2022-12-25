@@ -5,6 +5,10 @@ import { InputSystemStack } from '../lib/input-system-stack';
 
 const app = new cdk.App();
 new InputSystemStack(app, 'InputSystemStack', {
+  env: {
+    account: '478317648480',
+    region: 'us-east-1'
+  }
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
