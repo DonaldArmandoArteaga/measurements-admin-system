@@ -31,6 +31,10 @@ export class InputSystemStackEC2 {
         const userData = UserData.forLinux()
         userData.addCommands(
             'sudo yum update',
+            'git clone https://github.com/DonaldArmandoArteaga/measurements-admin-system.git',
+            'cd measurements-admin-system/src/ec2/',
+            'go build .',
+            'go run input-system'
         )
 
         const instance = new Instance(scope, 'ec2-imput-system-instance-1', {

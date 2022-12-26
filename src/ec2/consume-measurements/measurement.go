@@ -32,7 +32,7 @@ func Init() {
 
 	sqsClient := sqs.New(sess)
 
-	queueName := "InputSystemStack-InputSystemQueueD5E56904-ldWkBmyT5DKA"
+	queueName := "InputSystemStack-InputSystemQueueD5E56904-SNkSAF3CC92o"
 
 	urlRes, err := sqsClient.GetQueueUrl(&sqs.GetQueueUrlInput{
 		QueueName: &queueName,
