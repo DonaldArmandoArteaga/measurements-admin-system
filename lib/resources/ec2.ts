@@ -1,7 +1,9 @@
 import { CfnOutput } from "aws-cdk-lib"
-import { Vpc, SecurityGroup, Peer, Port, UserData, Instance, InstanceType, InstanceClass, InstanceSize, MachineImage, AmazonLinuxGeneration, CloudFormationInit, InitFile, InitConfig, IVpc } from "aws-cdk-lib/aws-ec2"
+import { Vpc, SecurityGroup, Peer, Port, UserData, Instance, InstanceType, InstanceClass, InstanceSize, MachineImage, AmazonLinuxGeneration, CloudFormationInit, InitFile, InitConfig, IVpc, InitCommand } from "aws-cdk-lib/aws-ec2"
 import { Role, ServicePrincipal } from "aws-cdk-lib/aws-iam"
 import { Construct } from "constructs"
+import * as fs from 'fs'
+import * as path from 'path';
 
 
 export class InputSystemStackEC2 {
@@ -29,13 +31,7 @@ export class InputSystemStackEC2 {
         )
 
         const userData = UserData.forLinux()
-        userData.addCommands(
-            'sudo yum update',
-            'git clone https://github.com/DonaldArmandoArteaga/measurements-admin-system.git',
-            'cd measurements-admin-system/src/ec2/',
-            'go build .',
-            'go run input-system'
-        )
+        userData.addCommands(fs.readFileSync(path.join(__dirname, `../../src/ec2/scripts/run.sh`), 'utf8'))
 
         const instance = new Instance(scope, 'ec2-imput-system-instance-1', {
             vpc,
@@ -53,7 +49,6 @@ export class InputSystemStackEC2 {
             userDataCausesReplacement: true,
             keyName: 'ec2-input-system-instance-1-key',
         })
-
 
         new CfnOutput(scope, 'InputSystemEC2-output', {
             value: instance.instancePublicIp
