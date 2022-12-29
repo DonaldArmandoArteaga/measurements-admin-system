@@ -47,10 +47,11 @@ func Init() {
 
 	svc := dynamodb.New(sess)
 
+	a := "https://sqs.us-east-1.amazonaws.com/478317648480/InputSystemStack-InputSystemQueueD5E56904-yDmemu8H2zaN"
 	for {
 		time.Sleep(4 * time.Second)
 		msgResult, err := sqsClient.ReceiveMessage(&sqs.ReceiveMessageInput{
-			QueueUrl:            urlRes.QueueUrl,
+			QueueUrl:            &a,
 			MaxNumberOfMessages: aws.Int64(10),
 		})
 
