@@ -78,7 +78,7 @@ func Init() {
 				}
 
 				_, err = svc.PutItem(&dynamodb.PutItemInput{
-					TableName: aws.String("InputSystemStack-InputSystemDynamoTable81679F4B-62OEORAJPIDA"),
+					TableName: aws.String("InputSystemStack-InputSystemDynamoTable81679F4B-1WD4RD6LUN9YU"),
 					Item: map[string]*dynamodb.AttributeValue{
 						"serial": {
 							S: aws.String(data.Serial),
