@@ -17,7 +17,7 @@ export class InputSystemStackAPIGateway {
                     new PolicyStatement({
                         actions: ["sqs:SendMessage"],
                         effect: Effect.ALLOW,
-                        resources: [inputSystemStackQueue.getQueueARN()],
+                        resources: [inputSystemStackQueue.getQueueARN],
                     }),
                 ],
             })
@@ -25,7 +25,7 @@ export class InputSystemStackAPIGateway {
 
         const inputGatewayIntegratedInputQueue = new AwsIntegration({
             service: 'sqs',
-            path: `${Aws.ACCOUNT_ID}/${inputSystemStackQueue.getQueueName()}`,
+            path: `${Aws.ACCOUNT_ID}/${inputSystemStackQueue.getQueueName}`,
             integrationHttpMethod: "POST",
             options: {
                 credentialsRole,

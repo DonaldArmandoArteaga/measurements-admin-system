@@ -3,6 +3,7 @@ package consumemeasurements
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -32,7 +33,7 @@ func Init() {
 
 	sqsClient := sqs.New(sess)
 
-	queueName := "InputSystemStack-InputSystemQueueD5E56904-yDmemu8H2zaN"
+	queueName := os.Getenv("QUEUE_NAME") //"InputSystemStack-InputSystemQueueD5E56904-yDmemu8H2zaN"
 
 	urlRes, err := sqsClient.GetQueueUrl(&sqs.GetQueueUrlInput{
 		QueueName: &queueName,
@@ -47,11 +48,11 @@ func Init() {
 
 	svc := dynamodb.New(sess)
 
-	a := "https://sqs.us-east-1.amazonaws.com/478317648480/InputSystemStack-InputSystemQueueD5E56904-yDmemu8H2zaN"
+	//a := "https://sqs.us-east-1.amazonaws.com/478317648480/InputSystemStack-InputSystemQueueD5E56904-yDmemu8H2zaN"
 	for {
 		time.Sleep(4 * time.Second)
 		msgResult, err := sqsClient.ReceiveMessage(&sqs.ReceiveMessageInput{
-			QueueUrl:            &a,
+			QueueUrl:            urlRes.QueueUrl,
 			MaxNumberOfMessages: aws.Int64(10),
 		})
 
@@ -79,7 +80,7 @@ func Init() {
 				}
 
 				_, err = svc.PutItem(&dynamodb.PutItemInput{
-					TableName: aws.String("InputSystemStack-InputSystemDynamoTable81679F4B-1WD4RD6LUN9YU"),
+					TableName: aws.String(os.Getenv("DYNAMO_TABLE_NAME")), //aws.String("InputSystemStack-InputSystemDynamoTable81679F4B-1WD4RD6LUN9YU"),
 					Item: map[string]*dynamodb.AttributeValue{
 						"serial": {
 							S: aws.String(data.Serial),

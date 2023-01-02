@@ -21,10 +21,11 @@ export class InputSystemStackQueue {
         });
     }
 
-    public getQueueName(): string {
+    get getQueueName(): string {
         return this.queue.queueName
     }
-    public getQueueARN(): string {
+
+    get getQueueARN(): string {
         return this.queue.queueArn
     }
 }

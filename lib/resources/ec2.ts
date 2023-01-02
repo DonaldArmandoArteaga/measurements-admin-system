@@ -7,7 +7,7 @@ import * as path from 'path';
 
 
 export class InputSystemStackEC2 {
-    constructor(scope: Construct, vpc: IVpc) {
+    constructor(scope: Construct, vpc: IVpc, queueName: string, dynamoTable: string) {
 
         const role = new Role(
             scope,
@@ -32,6 +32,8 @@ export class InputSystemStackEC2 {
 
         const userData = UserData.forLinux()
         userData.addCommands(fs.readFileSync(path.join(__dirname, `../../src/ec2/scripts/run.sh`), 'utf8'))
+        userData.addCommands(`export QUEUE_NAME=${queueName}`)
+        userData.addCommands(`export DYNAMO_TABLE_NAME=${dynamoTable}`)
 
         const instance = new Instance(scope, 'ec2-imput-system-instance-1', {
             vpc,
@@ -47,7 +49,7 @@ export class InputSystemStackEC2 {
             }),
             userData,
             userDataCausesReplacement: true,
-            keyName: 'ec2-input-system-instance-1-key',
+            keyName: 'ec2-input-system-instance-1-key'
         })
 
         new CfnOutput(scope, 'InputSystemEC2-output', {
