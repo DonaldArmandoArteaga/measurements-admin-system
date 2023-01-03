@@ -6,6 +6,7 @@ export class InputSystemStackDynamoDB {
     constructor(scope: Construct) {
 
         this.inputSystemTable = new Table(scope, 'InputSystemDynamoTable', {
+            tableName:'raw-measurements-table',
             partitionKey: { name: 'serial', type: AttributeType.STRING },
             sortKey: { name: 'date', type: AttributeType.STRING },
             billingMode: BillingMode.PAY_PER_REQUEST,

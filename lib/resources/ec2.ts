@@ -1,5 +1,5 @@
-import { CfnOutput } from "aws-cdk-lib"
-import { Vpc, SecurityGroup, Peer, Port, UserData, Instance, InstanceType, InstanceClass, InstanceSize, MachineImage, AmazonLinuxGeneration, CloudFormationInit, InitFile, InitConfig, IVpc, InitCommand } from "aws-cdk-lib/aws-ec2"
+import { CfnOutput, Token } from "aws-cdk-lib"
+import { SecurityGroup, Peer, Port, UserData, Instance, InstanceType, InstanceClass, InstanceSize, MachineImage, AmazonLinuxGeneration, CloudFormationInit, InitFile, InitConfig, IVpc, InitCommand } from "aws-cdk-lib/aws-ec2"
 import { Role, ServicePrincipal } from "aws-cdk-lib/aws-iam"
 import { Construct } from "constructs"
 import * as fs from 'fs'
@@ -31,13 +31,12 @@ export class InputSystemStackEC2 {
         )
 
         const userData = UserData.forLinux()
+        //userData.addCommands(`export QUEUE_NAME=raw-measurements-data-queue`, `export DYNAMO_TABLE_NAME=raw-measurements-table`)
         userData.addCommands(fs.readFileSync(path.join(__dirname, `../../src/ec2/scripts/run.sh`), 'utf8'))
-        userData.addCommands(`export QUEUE_NAME=${queueName}`)
-        userData.addCommands(`export DYNAMO_TABLE_NAME=${dynamoTable}`)
 
         const instance = new Instance(scope, 'ec2-imput-system-instance-1', {
             vpc,
-            role: role,
+            role,
             securityGroup: securityGroup,
             instanceName: 'InputSystemEC2',
             instanceType: InstanceType.of(
@@ -55,6 +54,7 @@ export class InputSystemStackEC2 {
         new CfnOutput(scope, 'InputSystemEC2-output', {
             value: instance.instancePublicIp
         })
+
     }
 }
 
