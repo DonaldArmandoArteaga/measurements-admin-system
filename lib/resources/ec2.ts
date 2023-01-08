@@ -38,7 +38,7 @@ export class InputSystemStackEC2 {
             vpc,
             role,
             securityGroup: securityGroup,
-            instanceName: 'InputSystemEC2',
+            //instanceName: 'InputSystemEC2',
             instanceType: InstanceType.of(
                 InstanceClass.T2,
                 InstanceSize.MICRO

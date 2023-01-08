@@ -14,7 +14,7 @@ export class InputSystemStackQueue {
 
         this.queue = new Queue(scope, 'InputSystemQueue', {
             visibilityTimeout: Duration.seconds(300),
-            queueName:'raw-measurements-data-queue',
+            //queueName:'raw-measurements-data-queue',
             deadLetterQueue: {
                 queue: deadLetterQueue,
                 maxReceiveCount: 1,
