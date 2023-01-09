@@ -40,7 +40,7 @@ func Init() {
 	})
 
 	if err != nil {
-		fmt.Printf("Got an error while trying to create queue: %v", err)
+		fmt.Printf("Got an error while trying to create queue: %v", queueName)
 		return
 	}
 
