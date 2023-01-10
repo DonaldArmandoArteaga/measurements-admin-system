@@ -31,7 +31,7 @@ export class InputSystemStackEC2 {
         )
 
         const userData = UserData.forLinux()
-        userData.addCommands('cd home/ec2-user/', `export QUEUE_NAME=${queueName}`, 'echo $QUEUE_NAME > a.txt', `export DYNAMO_TABLE_NAME=${tableName}`, 'echo $DYNAMO_TABLE_NAME > b.txt')
+        userData.addCommands(`export QUEUE_NAME=${queueName}`, `export DYNAMO_TABLE_NAME=${tableName}`)
         userData.addCommands(fs.readFileSync(path.join(__dirname, `../../src/ec2/scripts/run.sh`), 'utf8'))
 
         const instance = new Instance(scope, 'ec2-imput-system-instance-1', {

@@ -34,13 +34,13 @@ func Init() {
 	sqsClient := sqs.New(sess)
 
 	queueName := os.Getenv("QUEUE_NAME") //"InputSystemStack-InputSystemQueueD5E56904-yDmemu8H2zaN"
-	fmt.Printf("queueName: %v", queueName)
+	fmt.Println("queueName", queueName)
 	urlRes, err := sqsClient.GetQueueUrl(&sqs.GetQueueUrlInput{
 		QueueName: &queueName,
 	})
 
 	if err != nil {
-		fmt.Printf("Got an error while trying to create queue: %v", queueName)
+		fmt.Printf("Got an error while trying to create queue: %v", err)
 		return
 	}
 
