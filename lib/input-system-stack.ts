@@ -20,7 +20,7 @@ export class InputSystemStack extends Stack {
     const inputSystemStackQueue = new InputSystemStackQueue(this)
     new InputSystemStackAPIGateway(this, inputSystemStackQueue)
     const inputSystemStackDynamoDB = new InputSystemStackDynamoDB(this)
-    new InputSystemStackEC2(this, inputSystemStackCommonInstances.GeDefaultVPC, inputSystemStackQueue.getQueueName, inputSystemStackDynamoDB.GetInputSystemTable.tableName)
+    new InputSystemStackEC2(this, inputSystemStackCommonInstances.GeDefaultVPC, inputSystemStackDynamoDB.GetInputSystemTable.tableName, inputSystemStackQueue)
     const inputSystemStackLambda = new InputSystemStackLambda(this, inputSystemStackCommonInstances.GeDefaultVPC, inputSystemStackDynamoDB.GetInputSystemTable)
     new InputSystemStackRDS(this, inputSystemStackCommonInstances.GeDefaultVPC, inputSystemStackLambda.GetDynamoStream)
 

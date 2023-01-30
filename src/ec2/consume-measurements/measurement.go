@@ -33,8 +33,8 @@ func Init() {
 
 	sqsClient := sqs.New(sess)
 
-	queueName := os.Getenv("QUEUE_NAME") //"InputSystemStack-InputSystemQueueD5E56904-yDmemu8H2zaN"
-	fmt.Println("queueName", queueName)
+	queueName := os.Getenv("QUEUE_NAME")
+
 	urlRes, err := sqsClient.GetQueueUrl(&sqs.GetQueueUrlInput{
 		QueueName: &queueName,
 	})
@@ -48,7 +48,6 @@ func Init() {
 
 	svc := dynamodb.New(sess)
 
-	//a := "https://sqs.us-east-1.amazonaws.com/478317648480/InputSystemStack-InputSystemQueueD5E56904-yDmemu8H2zaN"
 	for {
 		time.Sleep(4 * time.Second)
 		msgResult, err := sqsClient.ReceiveMessage(&sqs.ReceiveMessageInput{
@@ -78,9 +77,9 @@ func Init() {
 					fmt.Printf("Got an error while trying parse message values into mesassuremnt values struct: %v  \n", err)
 					return
 				}
-				fmt.Printf("TableName: %v", os.Getenv("DYNAMO_TABLE_NAME"))
+
 				_, err = svc.PutItem(&dynamodb.PutItemInput{
-					TableName: aws.String(os.Getenv("DYNAMO_TABLE_NAME")), //aws.String("InputSystemStack-InputSystemDynamoTable81679F4B-1WD4RD6LUN9YU"),
+					TableName: aws.String(os.Getenv("DYNAMO_TABLE_NAME")),
 
 					Item: map[string]*dynamodb.AttributeValue{
 						"serial": {
