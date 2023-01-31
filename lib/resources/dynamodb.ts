@@ -7,8 +7,8 @@ export class InputSystemStackDynamoDB {
     constructor(scope: Construct) {
 
         this.inputSystemTable = new Table(scope, 'InputSystemDynamoTable', {
-            partitionKey: { name: 'serial', type: AttributeType.STRING },
-            sortKey: { name: 'date', type: AttributeType.STRING },
+            partitionKey: { name: 'id', type: AttributeType.STRING },
+            sortKey: { name: 'serial', type: AttributeType.STRING },
             billingMode: BillingMode.PAY_PER_REQUEST,
             stream: StreamViewType.NEW_IMAGE
         });

@@ -10,6 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/sqs"
+	"github.com/google/uuid"
 )
 
 type Measurement struct {
@@ -80,6 +81,9 @@ func Init() {
 					TableName: aws.String(os.Getenv("DYNAMO_TABLE_NAME")),
 
 					Item: map[string]*dynamodb.AttributeValue{
+						"id": {
+							S: aws.String(uuid.New().String()),
+						},
 						"serial": {
 							S: aws.String(data.Serial),
 						},
