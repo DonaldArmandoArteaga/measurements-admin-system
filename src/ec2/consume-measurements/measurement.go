@@ -64,7 +64,7 @@ func Init() {
 		for _, message := range msgResult.Messages {
 			go func(message *sqs.Message) {
 
-				logs.InfoLogger.Println("message:", message.Body)
+				logs.InfoLogger.Println("message:", *message.Body)
 				err := json.Unmarshal([]byte(*message.Body), data)
 				if err != nil {
 					logs.ErrorLogger.Println("Got an error while trying parse message into mesassuremnt struct: ", err)
