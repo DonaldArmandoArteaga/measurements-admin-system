@@ -19,18 +19,22 @@ type Measurement struct {
 }
 
 func Init() {
+	logs.InfoLogger.Println("Step 1")
 	sess, err := session.NewSessionWithOptions(session.Options{
 		Profile: "default",
 		Config: aws.Config{
 			Region: aws.String("us-east-1"),
 		},
 	})
+	logs.InfoLogger.Println("Step 2")
 
 	if err != nil {
+		logs.InfoLogger.Println("Step 3")
 		logs.ErrorLogger.Println("Failed to initialize new session: ", err)
 		return
 	}
 
+	logs.InfoLogger.Println("Step 4")
 	sqsClient := sqs.New(sess)
 
 	queueName := os.Getenv("QUEUE_NAME")
@@ -38,24 +42,30 @@ func Init() {
 	urlRes, err := sqsClient.GetQueueUrl(&sqs.GetQueueUrlInput{
 		QueueName: &queueName,
 	})
+	logs.InfoLogger.Println("Step 5")
 
 	if err != nil {
+		logs.InfoLogger.Println("Step 6")
 		logs.ErrorLogger.Println("Got an error while trying to create queue: ", err)
 		return
 	}
 
 	data := &Measurement{}
 
+	logs.InfoLogger.Println("Step 7")
 	svc := dynamodb.New(sess)
 
 	for {
+		logs.InfoLogger.Println("Step 8")
 		time.Sleep(4 * time.Second)
 		msgResult, err := sqsClient.ReceiveMessage(&sqs.ReceiveMessageInput{
 			QueueUrl:            urlRes.QueueUrl,
 			MaxNumberOfMessages: aws.Int64(10),
 		})
+		logs.InfoLogger.Println("Step 9")
 
 		if err != nil {
+			logs.InfoLogger.Println("Step 10")
 			logs.ErrorLogger.Println("Got an error while trying to retrieve message:", err)
 
 			// TODO is that the behavior we want? what needs to happen when we get an error receiven a message?
@@ -63,17 +73,19 @@ func Init() {
 		}
 
 		for _, message := range msgResult.Messages {
-
+			logs.InfoLogger.Println("Step 11")
 			go func(message *sqs.Message) {
 
 				err := json.Unmarshal([]byte(*message.Body), data)
 				if err != nil {
+					logs.InfoLogger.Println("Step 12")
 					logs.ErrorLogger.Println("Got an error while trying parse message into mesassuremnt struct: ", err)
 					return
 				}
-
+				logs.InfoLogger.Println("Step 3")
 				u, err := json.Marshal(data.Values)
 				if err != nil {
+					logs.InfoLogger.Println("Step 14")
 					logs.ErrorLogger.Println("Got an error while trying parse message values into mesassuremnt values struct: ", err)
 					return
 				}
@@ -93,8 +105,10 @@ func Init() {
 						},
 					},
 				})
+				logs.InfoLogger.Println("Step 15")
 
 				if err != nil {
+					logs.InfoLogger.Println("Step 16")
 					logs.ErrorLogger.Println("Got an error while trying to save message in dynamo: ", err)
 					return
 				}
@@ -103,8 +117,10 @@ func Init() {
 					QueueUrl:      urlRes.QueueUrl,
 					ReceiptHandle: message.ReceiptHandle,
 				})
+				logs.InfoLogger.Println("Step 17")
 
 				if err != nil {
+					logs.InfoLogger.Println("Step 18")
 					logs.ErrorLogger.Println("Got an error while trying to delete message: ", err)
 					return
 				}
