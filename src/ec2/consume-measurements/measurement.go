@@ -2,8 +2,7 @@ package consumemeasurements
 
 import (
 	"encoding/json"
-	logs "input-system/config"
-	"os"
+	"input-system/config"
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -19,6 +18,10 @@ type Measurement struct {
 	Values interface{} `json:"values"`
 }
 
+type MeasurementMetadata struct {
+	DateInserted time.Time `json:"DateInserted"`
+}
+
 func Init() {
 	sess, err := session.NewSessionWithOptions(session.Options{
 		Profile: "default",
@@ -28,20 +31,18 @@ func Init() {
 	})
 
 	if err != nil {
-		logs.ErrorLogger.Println("Failed to initialize new session: ", err)
+		config.ErrorLogger.Println("Failed to initialize new session: ", err)
 		return
 	}
 
 	sqsClient := sqs.New(sess)
 
-	queueName := os.Getenv("QUEUE_NAME")
-
 	urlRes, err := sqsClient.GetQueueUrl(&sqs.GetQueueUrlInput{
-		QueueName: &queueName,
+		QueueName: &config.QUEUE_NAME,
 	})
 
 	if err != nil {
-		logs.ErrorLogger.Println("Got an error while trying to create queue: ", err)
+		config.ErrorLogger.Println("Got an error while trying to create queue: ", err)
 		return
 	}
 
@@ -57,7 +58,7 @@ func Init() {
 		})
 
 		if err != nil {
-			logs.ErrorLogger.Println("Got an error while trying to retrieve message:", err)
+			config.ErrorLogger.Println("Got an error while trying to retrieve message:", err)
 			// TODO is that the behavior we want? what needs to happen when we get an error receiven a message?
 			return
 		}
@@ -65,20 +66,25 @@ func Init() {
 		for _, message := range msgResult.Messages {
 			go func(message *sqs.Message) {
 
-				logs.InfoLogger.Println("message:", *message.Body)
+				config.InfoLogger.Println("message:", *message.Body)
 				err := json.Unmarshal([]byte(*message.Body), data)
 				if err != nil {
-					logs.ErrorLogger.Println("Got an error while trying parse message into mesassuremnt struct: ", err)
+					config.ErrorLogger.Println("Got an error while trying parse message into mesassuremnt struct: ", err)
 					return
 				}
 				u, err := json.Marshal(data.Values)
 				if err != nil {
-					logs.ErrorLogger.Println("Got an error while trying parse message values into mesassuremnt values struct: ", err)
+					config.ErrorLogger.Println("Got an error while trying parse message values into mesassuremnt values struct: ", err)
 					return
 				}
 
+				out, err := json.Marshal(&MeasurementMetadata{DateInserted: time.Now()})
+				if err != nil {
+					config.ErrorLogger.Println("Got an error while trying creates metadata into values struct: ", err)
+				}
+
 				_, err = svc.PutItem(&dynamodb.PutItemInput{
-					TableName: aws.String(os.Getenv("DYNAMO_TABLE_NAME")),
+					TableName: aws.String(config.DYNAMO_TABLE_NAME),
 
 					Item: map[string]*dynamodb.AttributeValue{
 						"id": {
@@ -93,11 +99,14 @@ func Init() {
 						"values": {
 							S: aws.String(string(u)),
 						},
+						"metadata": {
+							S: aws.String(string(out)),
+						},
 					},
 				})
 
 				if err != nil {
-					logs.ErrorLogger.Println("Got an error while trying to save message in dynamo: ", err)
+					config.ErrorLogger.Println("Got an error while trying to save message in dynamo: ", err)
 					return
 				}
 
@@ -107,7 +116,7 @@ func Init() {
 				})
 
 				if err != nil {
-					logs.ErrorLogger.Println("Got an error while trying to delete message: ", err)
+					config.ErrorLogger.Println("Got an error while trying to delete message: ", err)
 					return
 				}
 
