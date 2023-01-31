@@ -1,4 +1,4 @@
-import { Duration } from "aws-cdk-lib";
+import { CfnOutput, Duration } from "aws-cdk-lib";
 import { SqsEventSource } from "aws-cdk-lib/aws-lambda-event-sources";
 import { Queue } from "aws-cdk-lib/aws-sqs";
 import { Construct } from "constructs";
@@ -19,6 +19,15 @@ export class InputSystemStackQueue {
                 maxReceiveCount: 1,
             },
         });
+
+        new CfnOutput(scope, 'InputSystemQueue-output', {
+            value: this.queue.queueName
+        })
+
+        new CfnOutput(scope, 'InputSystemDLQ-output', {
+            value: deadLetterQueue.queueName
+        })
+
     }
 
     get getQueueName(): string {

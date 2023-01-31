@@ -2,7 +2,7 @@ package consumemeasurements
 
 import (
 	"encoding/json"
-	"fmt"
+	logs "input-system/config"
 	"os"
 	"time"
 
@@ -27,7 +27,7 @@ func Init() {
 	})
 
 	if err != nil {
-		fmt.Printf("Failed to initialize new session: %v", err)
+		logs.ErrorLogger.Println("Failed to initialize new session: ", err)
 		return
 	}
 
@@ -40,7 +40,7 @@ func Init() {
 	})
 
 	if err != nil {
-		fmt.Printf("Got an error while trying to create queue: %v", err)
+		logs.ErrorLogger.Println("Got an error while trying to create queue: ", err)
 		return
 	}
 
@@ -56,7 +56,7 @@ func Init() {
 		})
 
 		if err != nil {
-			fmt.Printf("Got an error while trying to retrieve message: %v", err)
+			logs.ErrorLogger.Println("Got an error while trying to retrieve message:", err)
 
 			// TODO is that the behavior we want? what needs to happen when we get an error receiven a message?
 			return
@@ -68,13 +68,13 @@ func Init() {
 
 				err := json.Unmarshal([]byte(*message.Body), data)
 				if err != nil {
-					fmt.Printf("Got an error while trying parse message into mesassuremnt struct: %v  \n", err)
+					logs.ErrorLogger.Println("Got an error while trying parse message into mesassuremnt struct: ", err)
 					return
 				}
 
 				u, err := json.Marshal(data.Values)
 				if err != nil {
-					fmt.Printf("Got an error while trying parse message values into mesassuremnt values struct: %v  \n", err)
+					logs.ErrorLogger.Println("Got an error while trying parse message values into mesassuremnt values struct: ", err)
 					return
 				}
 
@@ -95,7 +95,7 @@ func Init() {
 				})
 
 				if err != nil {
-					fmt.Printf("Got an error while trying to save message in dynamo: %v  \n", err)
+					logs.ErrorLogger.Println("Got an error while trying to save message in dynamo: ", err)
 					return
 				}
 
@@ -105,7 +105,7 @@ func Init() {
 				})
 
 				if err != nil {
-					fmt.Printf("Got an error while trying to delete message: %v  \n", err)
+					logs.ErrorLogger.Println("Got an error while trying to delete message: ", err)
 					return
 				}
 

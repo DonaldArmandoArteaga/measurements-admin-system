@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-echo init-script
+echo init-script-
 sudo su
 yum install git -y
 cd home/ec2-user/
@@ -12,4 +12,4 @@ export HOME=/home/ec2-user/
 export GO111MODULE=on
 sudo go build .
 go run input-system
-echo end-script
+echo end-script-

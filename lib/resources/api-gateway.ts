@@ -1,4 +1,4 @@
-import { Aws } from "aws-cdk-lib";
+import { Aws, CfnOutput } from "aws-cdk-lib";
 import { AwsIntegration, RestApi } from "aws-cdk-lib/aws-apigateway";
 import { Role, ServicePrincipal, Policy, PolicyStatement, Effect } from "aws-cdk-lib/aws-iam";
 import { Construct } from "constructs";
@@ -51,5 +51,9 @@ export class InputSystemStackAPIGateway {
         const books = v1.addResource('input-data');
         books.addMethod('POST', inputGatewayIntegratedInputQueue, { methodResponses: [{ statusCode: "202" }] });
 
+
+        new CfnOutput(scope, 'InputSystemApiGateway-output', {
+            value: api.url
+        })
     }
 }
