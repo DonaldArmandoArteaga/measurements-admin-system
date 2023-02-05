@@ -1,17 +1,15 @@
 package main
 
 import (
+	"input-system/config"
 	logs "input-system/config"
 	consumemeasurements "input-system/consume-measurements"
-
-	"os"
 )
 
 func main() {
 	logs.InfoLogger.Println("Starting the application...")
-	logs.InfoLogger.Println("QueueName:", os.Getenv("QUEUE_NAME"))
-	logs.InfoLogger.Println("TableName:", os.Getenv("DYNAMO_TABLE_NAME"))
+	logs.InfoLogger.Println("QueueName:", config.QUEUE_NAME)
+	logs.InfoLogger.Println("DynamoTableName:", config.DYNAMO_TABLE_NAME)
+	logs.InfoLogger.Println("AWSRegion:", config.AWS_REGION)
 	consumemeasurements.Init()
-	logs.InfoLogger.Println("Finish Init Main")
-
 }
