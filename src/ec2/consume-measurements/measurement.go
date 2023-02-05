@@ -26,7 +26,7 @@ func Init() {
 	sess, err := session.NewSessionWithOptions(session.Options{
 		Profile: "default",
 		Config: aws.Config{
-			Region: aws.String("us-east-1"),
+			Region: aws.String(config.AWS_REGION),
 		},
 	})
 

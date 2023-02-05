@@ -1,4 +1,4 @@
-import { CfnOutput, Tags, Token } from "aws-cdk-lib"
+import { CfnOutput, Stack, Tags, Token } from "aws-cdk-lib"
 import { Table } from "aws-cdk-lib/aws-dynamodb"
 import { SecurityGroup, Peer, Port, UserData, Instance, InstanceType, InstanceClass, InstanceSize, MachineImage, AmazonLinuxGeneration, CloudFormationInit, InitFile, InitConfig, IVpc, InitCommand } from "aws-cdk-lib/aws-ec2"
 import { Effect, Policy, PolicyStatement, Role, ServicePrincipal } from "aws-cdk-lib/aws-iam"
@@ -52,7 +52,12 @@ export class InputSystemStackEC2 {
         )
 
         const userData = UserData.forLinux()
-        userData.addCommands('sudo su', `export QUEUE_NAME=${inputSystemStackQueue.getQueueName}`, `export DYNAMO_TABLE_NAME=${table.tableName}`)
+        userData.addCommands(
+            'sudo su',
+            `export QUEUE_NAME=${inputSystemStackQueue.getQueueName}`,
+            `export DYNAMO_TABLE_NAME=${table.tableName}`,
+            `export AWS_REGION=${Stack.of(scope).region}`,
+        )
         userData.addCommands(fs.readFileSync(path.join(__dirname, `../../src/ec2/scripts/run.sh`), 'utf8'))
 
         const instance = new Instance(scope, 'ec2-imput-system-instance-1', {
