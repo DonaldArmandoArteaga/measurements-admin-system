@@ -89,7 +89,7 @@ func (m *MeasurersService) GetById(id string) (*models.Measurement, error) {
 	}
 
 	return &models.Measurement{
-		ID:       measurers[0].ID,
+		Id:       measurers[0].ID,
 		Serial:   measurers[0].Serial,
 		Date:     date,
 		Values:   measurers[0].Values,
@@ -161,7 +161,7 @@ func (m *MeasurersService) GetBySerial(serial string) ([]*models.Measurement, in
 			}
 
 			measurerResponse = &models.Measurement{
-				ID:       measurer.ID,
+				Id:       measurer.ID,
 				Serial:   measurer.Serial,
 				Date:     date,
 				Values:   measurer.Values,
@@ -171,7 +171,7 @@ func (m *MeasurersService) GetBySerial(serial string) ([]*models.Measurement, in
 		} else {
 
 			measurerResponse = &models.Measurement{
-				ID:     measurer.ID,
+				Id:     measurer.ID,
 				Serial: measurer.Serial,
 				Date:   date,
 				Values: measurer.Values,

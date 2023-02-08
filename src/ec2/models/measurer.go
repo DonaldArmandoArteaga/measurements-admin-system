@@ -3,7 +3,7 @@ package models
 import "time"
 
 type Measurement struct {
-	ID       string               `json:"id,omitempty"`
+	Id       string               `json:"id,omitempty"`
 	Serial   string               `json:"serial,omitempty"`
 	Date     time.Time            `json:"date,omitempty"`
 	Values   interface{}          `json:"values,omitempty"`

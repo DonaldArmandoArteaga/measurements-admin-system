@@ -56,7 +56,7 @@ func Init(svc *dynamodb.Client, sqsClient *sqs.Client) {
 					return
 				}
 
-				data.ID = uuid.New().String()
+				data.Id = uuid.New().String()
 				data.Metadata = &models.MeasurementMetadata{DateInserted: time.Now()}
 				item, err := attributevalue.MarshalMap(data)
 				config.InfoLogger.Println("message:", item)
