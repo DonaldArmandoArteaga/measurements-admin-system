@@ -1,43 +1,23 @@
 package consumemeasurements
 
 import (
+	"context"
 	"encoding/json"
 	"input-system/config"
+	"input-system/models"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/dynamodb"
-	"github.com/aws/aws-sdk-go/service/sqs"
+	"github.com/aws/aws-sdk-go-v2/feature/dynamodb/attributevalue"
+	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
+	"github.com/aws/aws-sdk-go-v2/service/sqs"
+	"github.com/aws/aws-sdk-go-v2/service/sqs/types"
+
 	"github.com/google/uuid"
 )
 
-type Measurement struct {
-	Serial string      `json:"serial"`
-	Date   time.Time   `json:"date"`
-	Values interface{} `json:"values"`
-}
+func Init(svc *dynamodb.Client, sqsClient *sqs.Client) {
 
-type MeasurementMetadata struct {
-	DateInserted time.Time `json:"DateInserted"`
-}
-
-func Init() {
-	sess, err := session.NewSessionWithOptions(session.Options{
-		Profile: "default",
-		Config: aws.Config{
-			Region: aws.String(config.AWS_REGION),
-		},
-	})
-
-	if err != nil {
-		config.ErrorLogger.Println("Failed to initialize new session: ", err)
-		return
-	}
-
-	sqsClient := sqs.New(sess)
-
-	urlRes, err := sqsClient.GetQueueUrl(&sqs.GetQueueUrlInput{
+	urlRes, err := sqsClient.GetQueueUrl(context.Background(), &sqs.GetQueueUrlInput{
 		QueueName: &config.QUEUE_NAME,
 	})
 
@@ -46,15 +26,19 @@ func Init() {
 		return
 	}
 
-	data := &Measurement{}
+	data := &models.Measurement{}
 
-	svc := dynamodb.New(sess)
+	config.InfoLogger.Println("Starting the infinitive loop...")
 
 	for {
 		time.Sleep(4 * time.Second)
-		msgResult, err := sqsClient.ReceiveMessage(&sqs.ReceiveMessageInput{
+
+		msgResult, err := sqsClient.ReceiveMessage(context.Background(), &sqs.ReceiveMessageInput{
 			QueueUrl:            urlRes.QueueUrl,
-			MaxNumberOfMessages: aws.Int64(10),
+			MaxNumberOfMessages: int32(10),
+			MessageAttributeNames: []string{
+				string(types.QueueAttributeNameAll),
+			},
 		})
 
 		if err != nil {
@@ -64,7 +48,7 @@ func Init() {
 		}
 
 		for _, message := range msgResult.Messages {
-			go func(message *sqs.Message) {
+			go func(message *types.Message) {
 
 				config.InfoLogger.Println("message:", *message.Body)
 				err := json.Unmarshal([]byte(*message.Body), data)
@@ -72,37 +56,19 @@ func Init() {
 					config.ErrorLogger.Println("Got an error while trying parse message into mesassuremnt struct: ", err)
 					return
 				}
-				u, err := json.Marshal(data.Values)
+
+				data.ID = uuid.New().String()
+				data.Metadata = &models.MeasurementMetadata{DateInserted: time.Now()}
+				item, err := attributevalue.MarshalMap(data)
+
 				if err != nil {
-					config.ErrorLogger.Println("Got an error while trying parse message values into mesassuremnt values struct: ", err)
+					config.ErrorLogger.Println("Got an error while trying to convert the message into attribute value: ", err)
 					return
 				}
 
-				out, err := json.Marshal(&MeasurementMetadata{DateInserted: time.Now()})
-				if err != nil {
-					config.ErrorLogger.Println("Got an error while trying creates metadata into values struct: ", err)
-				}
-
-				_, err = svc.PutItem(&dynamodb.PutItemInput{
-					TableName: aws.String(config.DYNAMO_TABLE_NAME),
-
-					Item: map[string]*dynamodb.AttributeValue{
-						"id": {
-							S: aws.String(uuid.New().String()),
-						},
-						"serial": {
-							S: aws.String(data.Serial),
-						},
-						"date": {
-							S: aws.String(data.Date.String()),
-						},
-						"values": {
-							S: aws.String(string(u)),
-						},
-						"metadata": {
-							S: aws.String(string(out)),
-						},
-					},
+				_, err = svc.PutItem(context.Background(), &dynamodb.PutItemInput{
+					TableName: &config.DYNAMO_TABLE_NAME,
+					Item:      item,
 				})
 
 				if err != nil {
@@ -110,7 +76,7 @@ func Init() {
 					return
 				}
 
-				_, err = sqsClient.DeleteMessage(&sqs.DeleteMessageInput{
+				_, err = sqsClient.DeleteMessage(context.Background(), &sqs.DeleteMessageInput{
 					QueueUrl:      urlRes.QueueUrl,
 					ReceiptHandle: message.ReceiptHandle,
 				})
@@ -120,7 +86,7 @@ func Init() {
 					return
 				}
 
-			}(message)
+			}(&message)
 
 		}
 	}

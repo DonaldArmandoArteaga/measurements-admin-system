@@ -1,0 +1,501 @@
+INFO: 2023/02/05 22:32:48 main.go:13: Starting the application...
+INFO: 2023/02/05 22:32:48 main.go:14: QueueName: 
+INFO: 2023/02/05 22:32:48 main.go:15: DynamoTableName: 
+INFO: 2023/02/05 22:32:48 main.go:16: AWSRegion: 
+INFO: 2023/02/05 22:35:45 main.go:13: Starting the application...
+INFO: 2023/02/05 22:35:45 main.go:14: QueueName: 
+INFO: 2023/02/05 22:35:45 main.go:15: DynamoTableName: 
+INFO: 2023/02/05 22:35:45 main.go:16: AWSRegion: 
+ERROR: 2023/02/05 22:35:45 measurement.go:45: Got an error while trying to create queue:  MissingRegion: could not find region configuration
+INFO: 2023/02/06 11:54:22 main.go:13: Starting the application...
+INFO: 2023/02/06 11:54:22 main.go:14: QueueName: 
+INFO: 2023/02/06 11:54:22 main.go:15: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 11:54:22 main.go:16: AWSRegion: us-east-1
+ERROR: 2023/02/06 11:54:23 measurement.go:23: Got an error while trying to create queue:  AWS.SimpleQueueService.NonExistentQueue: The specified queue does not exist for this wsdl version.
+	status code: 400, request id: 95ef4c0c-15f4-51a7-adcc-1057270a68de
+INFO: 2023/02/06 11:58:57 main.go:14: Starting the application...
+INFO: 2023/02/06 11:58:57 main.go:15: QueueName: 
+INFO: 2023/02/06 11:58:57 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 11:58:57 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 11:58:58 measurement.go:23: Got an error while trying to create queue:  AWS.SimpleQueueService.NonExistentQueue: The specified queue does not exist for this wsdl version.
+	status code: 400, request id: c0be39b6-51ec-5eea-85d7-65ed65fd933c
+ERROR: 2023/02/06 11:59:03 Measurers.go:41: Got error calling GetItem by id:  ValidationException: The parameter cannot be converted to a numeric value: 5d04b352-8c16-4441-8ee1-d6e3f59e9f62
+	status code: 400, request id: P42FRT1LDA1GTCV9VTD50GAAC3VV4KQNSO5AEMVJF66Q9ASUAAJG
+ERROR: 2023/02/06 11:59:03 measurers.go:32: Got an error while trying to retrieve measurers by Id: ValidationException: The parameter cannot be converted to a numeric value: 5d04b352-8c16-4441-8ee1-d6e3f59e9f62
+	status code: 400, request id: P42FRT1LDA1GTCV9VTD50GAAC3VV4KQNSO5AEMVJF66Q9ASUAAJG
+INFO: 2023/02/06 12:24:11 main.go:14: Starting the application...
+INFO: 2023/02/06 12:24:11 main.go:15: QueueName: 
+INFO: 2023/02/06 12:24:11 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 12:24:11 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 12:24:11 measurement.go:23: Got an error while trying to create queue:  AWS.SimpleQueueService.NonExistentQueue: The specified queue does not exist for this wsdl version.
+	status code: 400, request id: ef8c282d-7da9-5cbe-933b-74764453fb92
+ERROR: 2023/02/06 12:24:18 Measurers.go:41: Got error calling GetItem by id:  ValidationException: The parameter cannot be converted to a numeric value: 5d04b352-8c16-4441-8ee1-d6e3f59e9f62
+	status code: 400, request id: AABI4QSH0URMC3CJ9DA54EAAO7VV4KQNSO5AEMVJF66Q9ASUAAJG
+ERROR: 2023/02/06 12:24:18 measurers.go:32: Got an error while trying to retrieve measurers by Id: ValidationException: The parameter cannot be converted to a numeric value: 5d04b352-8c16-4441-8ee1-d6e3f59e9f62
+	status code: 400, request id: AABI4QSH0URMC3CJ9DA54EAAO7VV4KQNSO5AEMVJF66Q9ASUAAJG
+INFO: 2023/02/06 12:34:34 main.go:14: Starting the application...
+INFO: 2023/02/06 12:34:34 main.go:15: QueueName: 
+INFO: 2023/02/06 12:34:34 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 12:34:34 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 12:34:35 measurement.go:23: Got an error while trying to create queue:  AWS.SimpleQueueService.NonExistentQueue: The specified queue does not exist for this wsdl version.
+	status code: 400, request id: b657db23-9a5c-502c-8996-8778a63575c1
+ERROR: 2023/02/06 12:34:41 Measurers.go:41: Got error calling GetItem by id:  ValidationException: The parameter cannot be converted to a numeric value: 5d04b352-8c16-4441-8ee1-d6e3f59e9f62
+	status code: 400, request id: 1IUEJPHHBJC4D72G75DE2ASL63VV4KQNSO5AEMVJF66Q9ASUAAJG
+ERROR: 2023/02/06 12:34:41 measurers.go:33: Got an error while trying to retrieve measurers by Id: ValidationException: The parameter cannot be converted to a numeric value: 5d04b352-8c16-4441-8ee1-d6e3f59e9f62
+	status code: 400, request id: 1IUEJPHHBJC4D72G75DE2ASL63VV4KQNSO5AEMVJF66Q9ASUAAJG
+INFO: 2023/02/06 12:35:51 main.go:14: Starting the application...
+INFO: 2023/02/06 12:35:51 main.go:15: QueueName: 
+INFO: 2023/02/06 12:35:51 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 12:35:51 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 12:35:52 measurement.go:23: Got an error while trying to create queue:  AWS.SimpleQueueService.NonExistentQueue: The specified queue does not exist for this wsdl version.
+	status code: 400, request id: 60c7ad09-f0d3-5728-ad56-f152cc65dd09
+ERROR: 2023/02/06 12:35:58 Measurers.go:41: Got error calling GetItem by id:  ValidationException: The parameter cannot be converted to a numeric value: 5d04b352-8c16-4441-8ee1-d6e3f59e9f62
+	status code: 400, request id: 630J4J495DNAQF13IK2E14A2G7VV4KQNSO5AEMVJF66Q9ASUAAJG
+ERROR: 2023/02/06 12:35:58 measurers.go:33: Got an error while trying to retrieve measurers by Id: ValidationException: The parameter cannot be converted to a numeric value: 5d04b352-8c16-4441-8ee1-d6e3f59e9f62
+	status code: 400, request id: 630J4J495DNAQF13IK2E14A2G7VV4KQNSO5AEMVJF66Q9ASUAAJG
+INFO: 2023/02/06 12:37:15 main.go:14: Starting the application...
+INFO: 2023/02/06 12:37:15 main.go:15: QueueName: 
+INFO: 2023/02/06 12:37:15 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 12:37:15 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 12:37:15 measurement.go:23: Got an error while trying to create queue:  AWS.SimpleQueueService.NonExistentQueue: The specified queue does not exist for this wsdl version.
+	status code: 400, request id: aa79b2a6-6212-5d04-811a-eefd5f18bc96
+ERROR: 2023/02/06 12:37:19 Measurers.go:41: Got error calling GetItem by id:  ValidationException: The provided key element does not match the schema
+	status code: 400, request id: H9OHNNT7NHLN5O5EIRODUA0CAVVV4KQNSO5AEMVJF66Q9ASUAAJG
+ERROR: 2023/02/06 12:37:19 measurers.go:31: Got an error while trying to retrieve measurers by Id: ValidationException: The provided key element does not match the schema
+	status code: 400, request id: H9OHNNT7NHLN5O5EIRODUA0CAVVV4KQNSO5AEMVJF66Q9ASUAAJG
+ERROR: 2023/02/06 12:42:29 Measurers.go:41: Got error calling GetItem by id:  ValidationException: The provided key element does not match the schema
+	status code: 400, request id: 944KDVIVPRVC26SQ59Q74ODULNVV4KQNSO5AEMVJF66Q9ASUAAJG
+ERROR: 2023/02/06 12:42:29 measurers.go:31: Got an error while trying to retrieve measurers by Id: ValidationException: The provided key element does not match the schema
+	status code: 400, request id: 944KDVIVPRVC26SQ59Q74ODULNVV4KQNSO5AEMVJF66Q9ASUAAJG
+INFO: 2023/02/06 12:44:20 main.go:14: Starting the application...
+INFO: 2023/02/06 12:44:20 main.go:15: QueueName: 
+INFO: 2023/02/06 12:44:20 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 12:44:20 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 12:44:20 measurement.go:23: Got an error while trying to create queue:  AWS.SimpleQueueService.NonExistentQueue: The specified queue does not exist for this wsdl version.
+	status code: 400, request id: e3915f78-e172-55c0-8939-0323dfc167bc
+ERROR: 2023/02/06 12:44:23 Measurers.go:41: Got error calling GetItem by id:  ValidationException: The provided key element does not match the schema
+	status code: 400, request id: QB12TNM2TTRL5D81AFPH7HTOIRVV4KQNSO5AEMVJF66Q9ASUAAJG
+ERROR: 2023/02/06 12:44:23 measurers.go:31: Got an error while trying to retrieve measurers by Id: ValidationException: The provided key element does not match the schema
+	status code: 400, request id: QB12TNM2TTRL5D81AFPH7HTOIRVV4KQNSO5AEMVJF66Q9ASUAAJG
+INFO: 2023/02/06 21:55:38 main.go:14: Starting the application...
+INFO: 2023/02/06 21:55:38 main.go:15: QueueName: 
+INFO: 2023/02/06 21:55:38 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 21:55:38 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 21:55:39 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: a0bf333e-aad2-549b-9860-6f6515385d04, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/06 21:55:49 Measurers.go:41: Got error calling GetItem by id:  operation error DynamoDB: GetItem, https response error StatusCode: 400, RequestID: 4HBVM9GPMB9ET0PNLC675AHDOBVV4KQNSO5AEMVJF66Q9ASUAAJG, api error ValidationException: The provided key element does not match the schema
+ERROR: 2023/02/06 21:55:49 measurers.go:31: Got an error while trying to retrieve measurers by Id: operation error DynamoDB: GetItem, https response error StatusCode: 400, RequestID: 4HBVM9GPMB9ET0PNLC675AHDOBVV4KQNSO5AEMVJF66Q9ASUAAJG, api error ValidationException: The provided key element does not match the schema
+INFO: 2023/02/06 21:59:33 main.go:14: Starting the application...
+INFO: 2023/02/06 21:59:33 main.go:15: QueueName: 
+INFO: 2023/02/06 21:59:33 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 21:59:33 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 21:59:33 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 35f326fd-d1d7-51b6-9a52-7aa61102ed32, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/06 21:59:39 Measurers.go:64: Failed to unmarshal Record. unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/06 21:59:39 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/06 22:01:06 main.go:14: Starting the application...
+INFO: 2023/02/06 22:01:06 main.go:15: QueueName: 
+INFO: 2023/02/06 22:01:06 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 22:01:06 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 22:01:06 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 7f6600bf-0e9c-568c-a2f9-5ce4cfae6283, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/06 22:01:11 Measurers.go:66: Failed to unmarshal Record. unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/06 22:01:11 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/06 22:01:44 main.go:14: Starting the application...
+INFO: 2023/02/06 22:01:44 main.go:15: QueueName: 
+INFO: 2023/02/06 22:01:44 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 22:01:44 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 22:01:44 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 51ca3bba-d79e-548d-ad87-67e116c90f27, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/06 22:01:48 Measurers.go:66: Failed to unmarshal Record. unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/06 22:01:48 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/06 22:02:27 main.go:14: Starting the application...
+INFO: 2023/02/06 22:02:27 main.go:15: QueueName: 
+INFO: 2023/02/06 22:02:27 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/06 22:02:27 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/06 22:02:27 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 9f231714-c572-5b94-81ac-4b4f04f1bf5f, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/06 22:02:31 Measurers.go:66: Failed to unmarshal Record. unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/06 22:02:31 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/07 09:43:39 main.go:14: Starting the application...
+INFO: 2023/02/07 09:43:39 main.go:15: QueueName: 
+INFO: 2023/02/07 09:43:39 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 09:43:39 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 09:43:39 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 1fce1cff-7bff-57de-9e50-40a31e2439ef, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 09:43:51 Measurers.go:48: Query Failed operation error DynamoDB: Query, https response error StatusCode: 400, RequestID: 3S2QLO1DG57JD7T490CQSH2KQJVV4KQNSO5AEMVJF66Q9ASUAAJG, api error ValidationException: ExpressionAttributeNames can only be specified when using expressions
+ERROR: 2023/02/07 09:43:51 measurers.go:31: Got an error while trying to retrieve measurers by Id: operation error DynamoDB: Query, https response error StatusCode: 400, RequestID: 3S2QLO1DG57JD7T490CQSH2KQJVV4KQNSO5AEMVJF66Q9ASUAAJG, api error ValidationException: ExpressionAttributeNames can only be specified when using expressions
+INFO: 2023/02/07 10:19:42 main.go:14: Starting the application...
+INFO: 2023/02/07 10:19:42 main.go:15: QueueName: 
+INFO: 2023/02/07 10:19:42 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 10:19:42 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 10:19:43 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: f8090f9f-32f9-5751-9a61-53c35cb6db62, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 10:20:00 Measurers.go:48: Query Failed operation error DynamoDB: Query, https response error StatusCode: 400, RequestID: UD3DNAU0BF2FR5JFKMDCJ7A1NRVV4KQNSO5AEMVJF66Q9ASUAAJG, api error ValidationException: ExpressionAttributeNames can only be specified when using expressions
+ERROR: 2023/02/07 10:20:00 measurers.go:31: Got an error while trying to retrieve measurers by Id: operation error DynamoDB: Query, https response error StatusCode: 400, RequestID: UD3DNAU0BF2FR5JFKMDCJ7A1NRVV4KQNSO5AEMVJF66Q9ASUAAJG, api error ValidationException: ExpressionAttributeNames can only be specified when using expressions
+INFO: 2023/02/07 10:22:51 main.go:14: Starting the application...
+INFO: 2023/02/07 10:22:51 main.go:15: QueueName: 
+INFO: 2023/02/07 10:22:51 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 10:22:51 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 10:22:52 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 5e156d92-9e20-56c4-bc42-31cef12bf168, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 10:23:00 Measurers.go:56: Failed to unmarshal Record. unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/07 10:23:00 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/07 10:27:07 main.go:14: Starting the application...
+INFO: 2023/02/07 10:27:07 main.go:15: QueueName: 
+INFO: 2023/02/07 10:27:07 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 10:27:07 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 10:27:08 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 3b580b5f-2c18-5aa1-be68-57035c14e15e, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 10:27:12 Measurers.go:56: Failed to unmarshal Record:  unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/07 10:27:12 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/07 10:27:32 main.go:14: Starting the application...
+INFO: 2023/02/07 10:27:32 main.go:15: QueueName: 
+INFO: 2023/02/07 10:27:32 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 10:27:32 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 10:27:33 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 336dda45-eb35-5ae6-a4ce-86199b11f9eb, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 10:27:40 Measurers.go:56: Failed to unmarshal Record:  unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/07 10:27:40 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/07 10:28:10 main.go:14: Starting the application...
+INFO: 2023/02/07 10:28:10 main.go:15: QueueName: 
+INFO: 2023/02/07 10:28:10 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 10:28:10 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 10:28:11 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: c3257e61-46c7-5e2f-b471-223d368c8c16, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 10:28:16 Measurers.go:56: Failed to unmarshal Record:  unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/07 10:28:16 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/07 10:29:09 main.go:14: Starting the application...
+INFO: 2023/02/07 10:29:09 main.go:15: QueueName: 
+INFO: 2023/02/07 10:29:09 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 10:29:09 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 10:29:09 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: d848962e-7245-552a-a8cd-ca7202c08a15, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 10:29:15 Measurers.go:56: Failed to unmarshal Record:  unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/07 10:29:15 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/07 10:30:39 main.go:14: Starting the application...
+INFO: 2023/02/07 10:30:39 main.go:15: QueueName: 
+INFO: 2023/02/07 10:30:39 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 10:30:39 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 10:30:39 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 3138b9d2-f596-5e8e-9b26-e58e854980f7, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 10:30:43 Measurers.go:56: Failed to unmarshal Record:  unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/07 10:30:43 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/07 10:31:27 main.go:14: Starting the application...
+INFO: 2023/02/07 10:31:27 main.go:15: QueueName: 
+INFO: 2023/02/07 10:31:27 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 10:31:27 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 10:31:28 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 16e2c41c-c38f-578c-80d8-9840b29f415d, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 10:31:32 Measurers.go:56: Failed to unmarshal Record:  unmarshal failed, cannot unmarshal "2023-02-05 23:00:58.74653285 +0000 UTC" into time.Time, parsing time "2023-02-05 23:00:58.74653285 +0000 UTC" as "2006-01-02T15:04:05Z07:00": cannot parse " 23:00:58.74653285 +0000 UTC" as "T"
+ERROR: 2023/02/07 10:31:32 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal "2023-02-05 23:00:58.74653285 +0000 UTC" into time.Time, parsing time "2023-02-05 23:00:58.74653285 +0000 UTC" as "2006-01-02T15:04:05Z07:00": cannot parse " 23:00:58.74653285 +0000 UTC" as "T"
+INFO: 2023/02/07 10:32:57 main.go:14: Starting the application...
+INFO: 2023/02/07 10:32:57 main.go:15: QueueName: 
+INFO: 2023/02/07 10:32:57 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 10:32:57 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 10:32:57 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: efcbc93b-f597-550b-8bc8-956784fe8608, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 10:33:01 Measurers.go:56: Failed to unmarshal Record:  unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+ERROR: 2023/02/07 10:33:01 measurers.go:31: Got an error while trying to retrieve measurers by Id: unmarshal failed, cannot unmarshal string into Go value type models.MeasurementMetadata
+INFO: 2023/02/07 10:33:11 main.go:14: Starting the application...
+INFO: 2023/02/07 10:33:11 main.go:15: QueueName: 
+INFO: 2023/02/07 10:33:11 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 10:33:11 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 10:33:11 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: c0a81a23-bb76-5f13-b544-467fca0176ce, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 11:01:32 main.go:14: Starting the application...
+INFO: 2023/02/07 11:01:32 main.go:15: QueueName: 
+INFO: 2023/02/07 11:01:32 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 11:01:32 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 11:01:32 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 13034843-5d13-5028-a72c-141f250f493c, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 11:09:06 main.go:14: Starting the application...
+INFO: 2023/02/07 11:09:06 main.go:15: QueueName: 
+INFO: 2023/02/07 11:09:06 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 11:09:06 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 11:09:07 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: dd7d4848-eff2-505c-8011-14149611f6fa, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 11:09:43 main.go:14: Starting the application...
+INFO: 2023/02/07 11:09:43 main.go:15: QueueName: 
+INFO: 2023/02/07 11:09:43 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 11:09:43 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 11:09:43 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: b63d68da-5421-5690-845f-34862e26cdcb, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 11:10:20 main.go:14: Starting the application...
+INFO: 2023/02/07 11:10:20 main.go:15: QueueName: 
+INFO: 2023/02/07 11:10:20 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 11:10:20 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 11:10:20 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 58b08e3d-0112-5de8-9172-d2617b3ec759, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 11:10:39 main.go:14: Starting the application...
+INFO: 2023/02/07 11:10:39 main.go:15: QueueName: 
+INFO: 2023/02/07 11:10:39 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 11:10:39 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 11:10:39 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 7ae680c6-0dc5-5874-8815-dc9a77fa024b, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 11:18:05 main.go:14: Starting the application...
+INFO: 2023/02/07 11:18:05 main.go:15: QueueName: 
+INFO: 2023/02/07 11:18:05 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 11:18:05 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 11:18:05 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 1d9d155f-a591-5509-b15c-4903de6cd24a, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 11:18:27 main.go:14: Starting the application...
+INFO: 2023/02/07 11:18:27 main.go:15: QueueName: 
+INFO: 2023/02/07 11:18:27 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 11:18:27 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 11:18:28 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: bda7721c-2847-50f8-ace0-2e4054531bd3, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 11:19:04 main.go:14: Starting the application...
+INFO: 2023/02/07 11:19:04 main.go:15: QueueName: 
+INFO: 2023/02/07 11:19:04 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 11:19:04 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 11:19:05 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: e5cdf47d-fefb-52df-b1f7-a82182c297d2, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 18:34:46 main.go:14: Starting the application...
+INFO: 2023/02/07 18:34:46 main.go:15: QueueName: 
+INFO: 2023/02/07 18:34:46 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 18:34:46 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 18:34:47 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: e45065e5-fe3b-5e83-8171-39b91c6eac24, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 18:38:22 main.go:14: Starting the application...
+INFO: 2023/02/07 18:38:22 main.go:15: QueueName: 
+INFO: 2023/02/07 18:38:22 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 18:38:22 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 18:38:23 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 19b800f6-4544-5452-bcf5-5caaa66a00f2, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 18:40:03 main.go:14: Starting the application...
+INFO: 2023/02/07 18:40:03 main.go:15: QueueName: 
+INFO: 2023/02/07 18:40:03 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 18:40:03 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 18:40:03 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 23b9d072-6dca-57e2-93d8-8c2e8e58bfd9, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 18:42:33 main.go:14: Starting the application...
+INFO: 2023/02/07 18:42:33 main.go:15: QueueName: 
+INFO: 2023/02/07 18:42:33 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 18:42:33 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 18:42:34 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 020dd7ce-63c0-5ad2-853e-8b9287e9544d, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 18:57:40 main.go:14: Starting the application...
+INFO: 2023/02/07 18:57:40 main.go:15: QueueName: 
+INFO: 2023/02/07 18:57:40 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 18:57:40 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 18:57:40 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: cb6603d7-5f01-5b60-89f6-5f8bb8b244d8, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 18:57:50 Measurers.go:56: measurer not found, id: 5d04b352-8c16-4441-8ee1-d6e3f59e9f62
+ERROR: 2023/02/07 18:57:50 measurers.go:31: Got an error while trying to retrieve measurers by Id: measurer not found, id: 5d04b352-8c16-4441-8ee1-d6e3f59e9f62
+INFO: 2023/02/07 18:58:42 main.go:14: Starting the application...
+INFO: 2023/02/07 18:58:42 main.go:15: QueueName: 
+INFO: 2023/02/07 18:58:42 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 18:58:42 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 18:58:42 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: f5fa2dac-b675-5c5e-bd70-71f05184f226, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 18:58:45 Measurers.go:70: Failed to parte date from dynamo record:  parsing time "2023-02-05 23:00:58.74653285 +0000 UTC" as "Mon, 02 Jan 2006 15:04:05 -0700": cannot parse "2023-02-05 23:00:58.74653285 +0000 UTC" as "Mon"
+ERROR: 2023/02/07 18:58:45 measurers.go:31: Got an error while trying to retrieve measurers by Id: parsing time "2023-02-05 23:00:58.74653285 +0000 UTC" as "Mon, 02 Jan 2006 15:04:05 -0700": cannot parse "2023-02-05 23:00:58.74653285 +0000 UTC" as "Mon"
+INFO: 2023/02/07 18:59:37 main.go:14: Starting the application...
+INFO: 2023/02/07 18:59:37 main.go:15: QueueName: 
+INFO: 2023/02/07 18:59:37 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 18:59:37 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 18:59:37 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 132d85ca-da62-5c1d-a5a2-d996324a2263, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 18:59:45 Measurers.go:70: Failed to parte date from dynamo record:  parsing time "2023-02-05 23:00:58.74653285 +0000 UTC" as "2023-02-05 23:00:58": cannot parse "-02-05 23:00:58.74653285 +0000 UTC" as "3"
+ERROR: 2023/02/07 18:59:45 measurers.go:31: Got an error while trying to retrieve measurers by Id: parsing time "2023-02-05 23:00:58.74653285 +0000 UTC" as "2023-02-05 23:00:58": cannot parse "-02-05 23:00:58.74653285 +0000 UTC" as "3"
+INFO: 2023/02/07 19:03:17 main.go:14: Starting the application...
+INFO: 2023/02/07 19:03:17 main.go:15: QueueName: 
+INFO: 2023/02/07 19:03:17 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:03:17 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:03:17 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: b81ce4c9-be4b-5bbd-821d-b895574f9015, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 19:22:17 main.go:14: Starting the application...
+INFO: 2023/02/07 19:22:17 main.go:15: QueueName: 
+INFO: 2023/02/07 19:22:17 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:22:17 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:22:18 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 0317f41d-3008-50b9-8ecc-a841dd7186db, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:22:35 Measurers.go:113: Query has Failed:  operation error DynamoDB: Query, https response error StatusCode: 400, RequestID: 8QJ3TCR6NST97H2768I973P873VV4KQNSO5AEMVJF66Q9ASUAAJG, api error ValidationException: Query condition missed key schema element: id
+ERROR: 2023/02/07 19:22:35 measurers.go:46: Got an error while trying to retrieve measurers by Serial : operation error DynamoDB: Query, https response error StatusCode: 400, RequestID: 8QJ3TCR6NST97H2768I973P873VV4KQNSO5AEMVJF66Q9ASUAAJG, api error ValidationException: Query condition missed key schema element: id
+INFO: 2023/02/07 19:24:43 main.go:14: Starting the application...
+INFO: 2023/02/07 19:24:43 main.go:15: QueueName: 
+INFO: 2023/02/07 19:24:43 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:24:43 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:24:43 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 1b4e9e4c-e825-5a23-a69d-c210062fceba, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:24:48 Measurers.go:113: Query has Failed:  operation error DynamoDB: Scan, https response error StatusCode: 400, RequestID: F93PC4CD041C0JOT0P26F5P3CNVV4KQNSO5AEMVJF66Q9ASUAAJG, api error ValidationException: ExpressionAttributeNames can only be specified when using expressions
+ERROR: 2023/02/07 19:24:48 measurers.go:46: Got an error while trying to retrieve measurers by Serial : operation error DynamoDB: Scan, https response error StatusCode: 400, RequestID: F93PC4CD041C0JOT0P26F5P3CNVV4KQNSO5AEMVJF66Q9ASUAAJG, api error ValidationException: ExpressionAttributeNames can only be specified when using expressions
+INFO: 2023/02/07 19:27:02 main.go:14: Starting the application...
+INFO: 2023/02/07 19:27:02 main.go:15: QueueName: 
+INFO: 2023/02/07 19:27:02 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:27:02 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:27:02 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 132e2782-0ced-56fe-b127-7bdee27868d4, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:27:05 Measurers.go:130: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02 15:04:05.999999999 -0700 MST": cannot parse "-0500" as "MST"
+ERROR: 2023/02/07 19:27:05 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02 15:04:05.999999999 -0700 MST": cannot parse "-0500" as "MST"
+INFO: 2023/02/07 19:36:07 main.go:14: Starting the application...
+INFO: 2023/02/07 19:36:07 main.go:15: QueueName: 
+INFO: 2023/02/07 19:36:07 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:36:07 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:36:08 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 118a8952-6223-5027-8828-d50e9294e119, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:36:12 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon, 02 Jan 2006 15:04:05 -0700": cannot parse "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon"
+ERROR: 2023/02/07 19:36:12 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon, 02 Jan 2006 15:04:05 -0700": cannot parse "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon"
+ERROR: 2023/02/07 19:36:18 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon, 02 Jan 2006 15:04:05 -0700": cannot parse "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon"
+ERROR: 2023/02/07 19:36:18 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon, 02 Jan 2006 15:04:05 -0700": cannot parse "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon"
+INFO: 2023/02/07 19:36:48 main.go:14: Starting the application...
+INFO: 2023/02/07 19:36:48 main.go:15: QueueName: 
+INFO: 2023/02/07 19:36:48 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:36:48 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:36:48 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 392a6019-3d2e-5d72-bfa1-3c45cdf1f779, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:36:53 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05Z07:00": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+ERROR: 2023/02/07 19:36:53 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05Z07:00": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+INFO: 2023/02/07 19:37:21 main.go:14: Starting the application...
+INFO: 2023/02/07 19:37:21 main.go:15: QueueName: 
+INFO: 2023/02/07 19:37:21 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:37:21 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:37:21 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: e7f589ea-a6d8-57e3-9d1c-d5b657d89542, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:37:30 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05.999999999Z07:00": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+ERROR: 2023/02/07 19:37:30 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05.999999999Z07:00": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+INFO: 2023/02/07 19:39:06 main.go:14: Starting the application...
+INFO: 2023/02/07 19:39:06 main.go:15: QueueName: 
+INFO: 2023/02/07 19:39:06 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:39:06 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:39:06 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 9b752e0c-3d96-5486-bfff-7250ccff89c9, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:39:15 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon, 02 Jan 2006 15:04:05 MST": cannot parse "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon"
+ERROR: 2023/02/07 19:39:15 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon, 02 Jan 2006 15:04:05 MST": cannot parse "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon"
+INFO: 2023/02/07 19:39:24 main.go:14: Starting the application...
+INFO: 2023/02/07 19:39:24 main.go:15: QueueName: 
+INFO: 2023/02/07 19:39:24 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:39:24 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:39:25 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 02f687b9-fd45-5745-9a7f-dbe50c39e770, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:39:31 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon, 02 Jan 2006 15:04:05 -0700": cannot parse "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon"
+ERROR: 2023/02/07 19:39:31 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon, 02 Jan 2006 15:04:05 -0700": cannot parse "2023-01-31 01:18:18.8474172 -0500 -0500" as "Mon"
+INFO: 2023/02/07 19:40:20 main.go:14: Starting the application...
+INFO: 2023/02/07 19:40:20 main.go:15: QueueName: 
+INFO: 2023/02/07 19:40:20 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:40:20 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:40:21 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: f674d143-c291-5a54-aaba-8d1f33252277, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:40:27 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500": month out of range
+ERROR: 2023/02/07 19:40:27 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500": month out of range
+INFO: 2023/02/07 19:49:25 main.go:14: Starting the application...
+INFO: 2023/02/07 19:49:25 main.go:15: QueueName: 
+INFO: 2023/02/07 19:49:25 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:49:25 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:49:25 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: eda01b91-7c6f-59cc-bfc8-47cd8fbbd592, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:49:32 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05Z07:00": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+ERROR: 2023/02/07 19:49:32 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05Z07:00": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+INFO: 2023/02/07 19:54:03 main.go:14: Starting the application...
+INFO: 2023/02/07 19:54:03 main.go:15: QueueName: 
+INFO: 2023/02/07 19:54:03 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 19:54:03 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 19:54:04 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: bfaf0769-87cd-522c-b9ab-5b357326f0cf, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 19:54:18 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05.999999-07:00": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+ERROR: 2023/02/07 19:54:18 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05.999999-07:00": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+INFO: 2023/02/07 20:20:11 main.go:14: Starting the application...
+INFO: 2023/02/07 20:20:11 main.go:15: QueueName: 
+INFO: 2023/02/07 20:20:11 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 20:20:11 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 20:20:12 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: c9814eb7-7251-5a8a-9348-12eb895a62b5, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 20:20:20 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05.999999-07:00": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+ERROR: 2023/02/07 20:20:20 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05.999999-07:00": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+INFO: 2023/02/07 20:23:20 main.go:14: Starting the application...
+INFO: 2023/02/07 20:23:20 main.go:15: QueueName: 
+INFO: 2023/02/07 20:23:20 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 20:23:20 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 20:23:20 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: dcd146ce-edea-5183-a487-1a921622e646, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 20:23:27 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2023-01-31T01:18:18.8474172-0500-0500": cannot parse "-01-31 01:18:18.8474172 -0500 -0500" as "3"
+ERROR: 2023/02/07 20:23:27 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2023-01-31T01:18:18.8474172-0500-0500": cannot parse "-01-31 01:18:18.8474172 -0500 -0500" as "3"
+INFO: 2023/02/07 20:26:02 main.go:14: Starting the application...
+INFO: 2023/02/07 20:26:02 main.go:15: QueueName: 
+INFO: 2023/02/07 20:26:02 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 20:26:02 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 20:26:03 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: ddcfd72f-3e57-5f13-a484-8b73c23d11b3, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 20:26:09 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05.999999999-0500-0500": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+ERROR: 2023/02/07 20:26:09 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02T15:04:05.999999999-0500-0500": cannot parse " 01:18:18.8474172 -0500 -0500" as "T"
+INFO: 2023/02/07 20:26:22 main.go:14: Starting the application...
+INFO: 2023/02/07 20:26:22 main.go:15: QueueName: 
+INFO: 2023/02/07 20:26:22 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 20:26:22 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 20:26:23 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: fa349edc-9a97-54c4-b86b-c28066e9c8b1, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 20:26:29 Measurers.go:135: Failed to parte date from dynamo record:  parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02 15:04:05.999999999-0500-0500": cannot parse " -0500 -0500" as "-"
+ERROR: 2023/02/07 20:26:29 measurers.go:46: Got an error while trying to retrieve measurers by Serial : parsing time "2023-01-31 01:18:18.8474172 -0500 -0500" as "2006-01-02 15:04:05.999999999-0500-0500": cannot parse " -0500 -0500" as "-"
+INFO: 2023/02/07 20:26:48 main.go:14: Starting the application...
+INFO: 2023/02/07 20:26:48 main.go:15: QueueName: 
+INFO: 2023/02/07 20:26:48 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 20:26:48 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 20:26:48 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: d0a2e1ba-48f8-5b7c-b4a5-bde6b460c0dd, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 20:26:58 Measurers.go:143: Failed to parte metadata from dynamo record:  unexpected end of JSON input
+ERROR: 2023/02/07 20:26:58 measurers.go:46: Got an error while trying to retrieve measurers by Serial : unexpected end of JSON input
+INFO: 2023/02/07 20:28:11 main.go:14: Starting the application...
+INFO: 2023/02/07 20:28:11 main.go:15: QueueName: 
+INFO: 2023/02/07 20:28:11 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 20:28:11 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 20:28:11 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 06ae4cc1-00c5-5858-bdab-109dfc2e3205, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 20:28:18 Measurers.go:145: Failed to parte metadata from dynamo record:  unexpected end of JSON input
+ERROR: 2023/02/07 20:28:18 measurers.go:46: Got an error while trying to retrieve measurers by Serial : unexpected end of JSON input
+ERROR: 2023/02/07 20:28:45 Measurers.go:145: Failed to parte metadata from dynamo record:  unexpected end of JSON input
+ERROR: 2023/02/07 20:28:45 measurers.go:46: Got an error while trying to retrieve measurers by Serial : unexpected end of JSON input
+INFO: 2023/02/07 20:28:59 main.go:14: Starting the application...
+INFO: 2023/02/07 20:28:59 main.go:15: QueueName: 
+INFO: 2023/02/07 20:28:59 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 20:28:59 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 20:28:59 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: a2b962b2-e4d9-5570-aed4-3eee19c23136, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 20:29:06 Measurers.go:145: Failed to parte metadata from dynamo record:  unexpected end of JSON input
+ERROR: 2023/02/07 20:29:06 measurers.go:46: Got an error while trying to retrieve measurers by Serial : unexpected end of JSON input
+INFO: 2023/02/07 20:39:58 main.go:14: Starting the application...
+INFO: 2023/02/07 20:39:58 main.go:15: QueueName: 
+INFO: 2023/02/07 20:39:58 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 20:39:58 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 20:39:59 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: dd9921a2-27a1-5ff5-9f13-7dfed80e0b00, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 20:40:10 Measurers.go:143: Failed to parse metadata from dynamo record:  unexpected end of JSON input
+ERROR: 2023/02/07 20:40:10 measurers.go:46: Got an error while trying to retrieve measurers by Serial : unexpected end of JSON input
+INFO: 2023/02/07 21:05:18 main.go:14: Starting the application...
+INFO: 2023/02/07 21:05:18 main.go:15: QueueName: 
+INFO: 2023/02/07 21:05:18 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:05:18 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:05:19 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: a2834e01-8df7-588c-965c-125c88682916, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 21:05:23 Measurers.go:143: Failed to parse metadata from dynamo record:  unexpected end of JSON input
+ERROR: 2023/02/07 21:05:23 measurers.go:46: Got an error while trying to retrieve measurers by Serial : unexpected end of JSON input
+INFO: 2023/02/07 21:08:04 main.go:14: Starting the application...
+INFO: 2023/02/07 21:08:04 main.go:15: QueueName: 
+INFO: 2023/02/07 21:08:04 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:08:04 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:08:04 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: f1dc9137-edf4-516b-aac0-cd6aebb0e6f2, AWS.SimpleQueueService.NonExistentQueue: 
+ERROR: 2023/02/07 21:08:13 Measurers.go:143: Failed to parse metadata from dynamo record:  unexpected end of JSON input
+ERROR: 2023/02/07 21:08:13 measurers.go:46: Got an error while trying to retrieve measurers by Serial : unexpected end of JSON input
+INFO: 2023/02/07 21:12:05 main.go:14: Starting the application...
+INFO: 2023/02/07 21:12:05 main.go:15: QueueName: 
+INFO: 2023/02/07 21:12:05 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:12:05 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:12:05 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 5e85837c-e0c4-540a-9ac4-df21e7f183b7, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:14:35 main.go:14: Starting the application...
+INFO: 2023/02/07 21:14:35 main.go:15: QueueName: 
+INFO: 2023/02/07 21:14:35 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:14:35 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:14:36 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 641287d9-62cb-5ca6-baa4-db846507b4bd, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:18:17 main.go:14: Starting the application...
+INFO: 2023/02/07 21:18:17 main.go:15: QueueName: 
+INFO: 2023/02/07 21:18:17 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:18:17 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:18:17 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 957f7673-7ad2-5882-9cb1-2a2e727b2e1c, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:19:36 main.go:14: Starting the application...
+INFO: 2023/02/07 21:19:36 main.go:15: QueueName: 
+INFO: 2023/02/07 21:19:36 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:19:36 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:19:37 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: f6ada64e-52dd-539b-8ee3-fa135a24a620, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:25:14 main.go:14: Starting the application...
+INFO: 2023/02/07 21:25:14 main.go:15: QueueName: 
+INFO: 2023/02/07 21:25:14 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:25:14 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:25:14 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 6b72163e-999a-577e-82c1-4a6393d025cd, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:25:55 main.go:14: Starting the application...
+INFO: 2023/02/07 21:25:55 main.go:15: QueueName: 
+INFO: 2023/02/07 21:25:55 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:25:55 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:25:55 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 09dd09ea-4534-5370-b668-55b74f47ce2b, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:31:57 main.go:14: Starting the application...
+INFO: 2023/02/07 21:31:57 main.go:15: QueueName: 
+INFO: 2023/02/07 21:31:57 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:31:57 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:31:58 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: e147f705-6bdb-54cc-b8b4-ab586005fd4d, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:33:18 main.go:14: Starting the application...
+INFO: 2023/02/07 21:33:18 main.go:15: QueueName: 
+INFO: 2023/02/07 21:33:18 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:33:18 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:33:18 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: ad209bc0-50f5-519b-979e-c79d5cdb0812, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:41:29 main.go:14: Starting the application...
+INFO: 2023/02/07 21:41:29 main.go:15: QueueName: 
+INFO: 2023/02/07 21:41:29 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:41:29 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:41:30 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 4370d81e-e370-5233-900d-8443ed6a6a4c, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:50:30 main.go:14: Starting the application...
+INFO: 2023/02/07 21:50:30 main.go:15: QueueName: 
+INFO: 2023/02/07 21:50:30 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:50:30 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:50:30 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: d6e000c1-e968-52eb-b257-5c9cf95e3c35, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:51:22 main.go:14: Starting the application...
+INFO: 2023/02/07 21:51:22 main.go:15: QueueName: 
+INFO: 2023/02/07 21:51:22 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:51:22 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:51:22 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: febfd0ac-e3b9-59c3-8730-8cf1f3d3c537, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:51:42 main.go:14: Starting the application...
+INFO: 2023/02/07 21:51:42 main.go:15: QueueName: 
+INFO: 2023/02/07 21:51:42 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:51:42 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:51:42 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 961b0ced-2f48-592d-8550-50b03f365ea9, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 21:52:11 main.go:14: Starting the application...
+INFO: 2023/02/07 21:52:11 main.go:15: QueueName: 
+INFO: 2023/02/07 21:52:11 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 21:52:11 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 21:52:11 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 6e460301-143d-502d-93d8-5f5c04a6d214, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 22:10:03 main.go:14: Starting the application...
+INFO: 2023/02/07 22:10:03 main.go:15: QueueName: 
+INFO: 2023/02/07 22:10:03 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 22:10:03 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 22:10:03 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: 7dd38fac-4b3a-5623-b289-d3f15ff1d1ea, AWS.SimpleQueueService.NonExistentQueue: 
+INFO: 2023/02/07 22:13:56 main.go:14: Starting the application...
+INFO: 2023/02/07 22:13:56 main.go:15: QueueName: 
+INFO: 2023/02/07 22:13:56 main.go:16: DynamoTableName: InputSystemStack-InputSystemDynamoTable81679F4B-IVQENZ35UHJT
+INFO: 2023/02/07 22:13:56 main.go:17: AWSRegion: us-east-1
+ERROR: 2023/02/07 22:13:56 measurement.go:25: Got an error while trying to create queue:  operation error SQS: GetQueueUrl, https response error StatusCode: 400, RequestID: bce0b41f-c5d2-53a2-b735-e842d06686fc, AWS.SimpleQueueService.NonExistentQueue: 
