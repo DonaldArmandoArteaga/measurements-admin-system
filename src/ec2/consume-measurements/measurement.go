@@ -50,7 +50,6 @@ func Init(svc *dynamodb.Client, sqsClient *sqs.Client) {
 		for _, message := range msgResult.Messages {
 			go func(message *types.Message) {
 
-				config.InfoLogger.Println("message:", *message.Body)
 				err := json.Unmarshal([]byte(*message.Body), data)
 				if err != nil {
 					config.ErrorLogger.Println("Got an error while trying parse message into mesassuremnt struct: ", err)
@@ -60,6 +59,7 @@ func Init(svc *dynamodb.Client, sqsClient *sqs.Client) {
 				data.ID = uuid.New().String()
 				data.Metadata = &models.MeasurementMetadata{DateInserted: time.Now()}
 				item, err := attributevalue.MarshalMap(data)
+				config.InfoLogger.Println("message:", item)
 
 				if err != nil {
 					config.ErrorLogger.Println("Got an error while trying to convert the message into attribute value: ", err)
