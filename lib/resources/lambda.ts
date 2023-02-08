@@ -30,6 +30,7 @@ export class InputSystemStackLambda {
 
         this.DynamoStream.addEventSource(new DynamoEventSource(inputSystemTable, {
             startingPosition: StartingPosition.LATEST,
+            batchSize: 20
         }));
 
 
