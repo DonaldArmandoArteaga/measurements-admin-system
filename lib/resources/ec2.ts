@@ -9,7 +9,7 @@ import { InputSystemStackQueue } from "./sqs"
 
 
 export class InputSystemStackEC2 {
-    constructor(scope: Construct, vpc: IVpc, table: Table, inputSystemStackQueue: InputSystemStackQueue) {
+    constructor(scope: Construct, vpc: IVpc, table: Table, queue: InputSystemStackQueue) {
 
         const role = new Role(
             scope,
@@ -24,7 +24,7 @@ export class InputSystemStackEC2 {
                         "sqs:*",
                     ],
                     effect: Effect.ALLOW,
-                    resources: [inputSystemStackQueue.getQueueARN],
+                    resources: [queue.getQueueARN],
                 }),
                 new PolicyStatement({
                     actions: [
@@ -54,7 +54,7 @@ export class InputSystemStackEC2 {
         const userData = UserData.forLinux()
         userData.addCommands(
             'sudo su',
-            `export QUEUE_NAME=${inputSystemStackQueue.getQueueName}`,
+            `export QUEUE_NAME=${queue.getQueueName}`,
             `export DYNAMO_TABLE_NAME=${table.tableName}`,
             `export AWS_REGION=${Stack.of(scope).region}`,
         )

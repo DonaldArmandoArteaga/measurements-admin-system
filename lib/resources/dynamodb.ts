@@ -10,7 +10,8 @@ export class InputSystemStackDynamoDB {
             partitionKey: { name: 'id', type: AttributeType.STRING },
             sortKey: { name: 'serial', type: AttributeType.STRING },
             billingMode: BillingMode.PAY_PER_REQUEST,
-            stream: StreamViewType.NEW_IMAGE
+            stream: StreamViewType.NEW_IMAGE,
+            tableName: `Input-system-dynamo-measurements-table`
         });
 
         new CfnOutput(scope, 'InputSystemDynamo-output', {

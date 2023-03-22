@@ -11,31 +11,19 @@ export class InputSystemStackLambda {
     private readonly DynamoStream: NodejsFunction
     constructor(scope: Construct, vpc: IVpc, inputSystemTable: Table) {
 
-        const dynamoStreamSG = new SecurityGroup(scope, 'dynamo-stream-lambda-security-group', {
-            vpc,
-        });
-
         this.DynamoStream = new NodejsFunction(scope, 'dynamo-stream-lambda', {
             memorySize: 128,
             timeout: Duration.seconds(5),
             runtime: Runtime.NODEJS_16_X,
             handler: 'Handler',
             entry: path.join(__dirname, `../../src/lambda/dynamo-stream.ts`),
-            // vpc,
-            // securityGroups: [dynamoStreamSG],
-            // vpcSubnets: vpc.selectSubnets({
-            //     subnetType: SubnetType.PRIVATE_ISOLATED,
-            // }),
+            //vpc,
         });
 
         this.DynamoStream.addEventSource(new DynamoEventSource(inputSystemTable, {
             startingPosition: StartingPosition.LATEST,
             batchSize: 20
         }));
-
-
-
-
 
     }
 

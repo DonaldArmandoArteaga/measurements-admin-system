@@ -1,56 +1,49 @@
-
-import { Duration, RemovalPolicy, CfnOutput } from "aws-cdk-lib";
-import { SubnetType, InstanceType, InstanceClass, InstanceSize, Port, IVpc, SecurityGroup } from "aws-cdk-lib/aws-ec2";
-import { DatabaseInstance, DatabaseInstanceEngine, PostgresEngineVersion, Credentials } from "aws-cdk-lib/aws-rds";
+import { InstanceClass, InstanceSize, InstanceType, IVpc, Peer, Port, SecurityGroup, SubnetType } from "aws-cdk-lib/aws-ec2";
 import { Construct } from "constructs";
 import { Function } from "aws-cdk-lib/aws-lambda";
-
+import { DatabaseInstance, DatabaseInstanceEngine, PostgresEngineVersion, Credentials } from "aws-cdk-lib/aws-rds";
+import { CfnOutput, SecretValue } from "aws-cdk-lib";
 
 export class InputSystemStackRDS {
 
     constructor(scope: Construct, vpc: IVpc, lambda: Function) {
 
-        // const dbSecurityGroup = new SecurityGroup(scope, 'InputSystemPostgresRDS-securityGroup', {
-        //     vpc,
-        // });
+        const securityGroup = new SecurityGroup(
+            scope,
+            'rds-input-system-sg',
+            {
+                vpc,
+                allowAllOutbound: true,
+            }
+        )
 
-        // const dbInstance = new DatabaseInstance(scope, 'InputSystemPostgresRDS', {
-        //     vpc,
-        //     vpcSubnets: vpc.selectSubnets({
-        //         subnetType: SubnetType.PRIVATE_ISOLATED,
-        //     }),
-        //     engine: DatabaseInstanceEngine.postgres({
-        //         version: PostgresEngineVersion.VER_14,
-        //     }),
-        //     instanceType: InstanceType.of(
-        //         InstanceClass.BURSTABLE3,
-        //         InstanceSize.SMALL,
-        //     ),
-        //     credentials: Credentials.fromGeneratedSecret('postgres'),
-        //     multiAz: false,
-        //     allocatedStorage: 100,
-        //     maxAllocatedStorage: 100,
-        //     allowMajorVersionUpgrade: false,
-        //     autoMinorVersionUpgrade: true,
-        //     backupRetention: Duration.days(0),
-        //     deleteAutomatedBackups: true,
-        //     removalPolicy: RemovalPolicy.DESTROY,
-        //     deletionProtection: false,
-        //     databaseName: 'measurements',
-        //     publiclyAccessible: false,
-        //     securityGroups: [dbSecurityGroup],
-        // });
+        securityGroup.addIngressRule(
+            Peer.anyIpv4(),
+            Port.tcp(5432),
+            'Allows Database access from Internet'
+        )
 
-        // dbInstance.connections.allowFrom(lambda, Port.tcp(5432));
+        const instance = new DatabaseInstance(scope, 'Instance', {
+            engine: DatabaseInstanceEngine.postgres({ version: PostgresEngineVersion.VER_14_2 }),
+            instanceType: InstanceType.of(
+                InstanceClass.T3,
+                InstanceSize.MICRO
+            ),
+            credentials: Credentials.fromPassword('postgres', SecretValue.unsafePlainText("Armando20109210*")),
+            vpc,
+            vpcSubnets: {
+                subnetType: SubnetType.PUBLIC,
+            },
+            publiclyAccessible: true,
+            securityGroups: [securityGroup],
 
-        // dbInstance.secret?.grantRead(lambda);
+        });
 
-        // new CfnOutput(scope, 'InputSystemPostgresRDS-hostName', {
-        //     value: dbInstance.instanceEndpoint.hostname,
-        // });
 
-        // new CfnOutput(scope, 'InputSystemPostgresRDS-secretName', {
-        //     value: dbInstance.secret?.secretName!,
-        // });
+        new CfnOutput(scope, 'InputSystemRDS-output', {
+            value: `Address: ${instance.dbInstanceEndpointAddress}, port: ${instance.dbInstanceEndpointPort}`
+        })
+
+
     }
 }
