@@ -14,7 +14,6 @@ var (
 	DYNAMO_TABLE_NAME = os.Getenv("DYNAMO_TABLE_NAME")
 	AWS_REGION        = os.Getenv("AWS_REGION")
 	TIME_FORMAT_1     = "2006-01-02 15:04:05.999999999 -0700 MST"
-	TIME_FORMAT_2     = "2006-01-02 15:04:05.999999999 -0500 -0500"
 )
 
 func InitConfig() (*dynamodb.Client, *sqs.Client, error) {

@@ -70,14 +70,7 @@ func (m *MeasurersService) GetById(id string) (*models.Measurement, error) {
 	date, err := time.Parse(config.TIME_FORMAT_1, measurers[0].Date)
 
 	if err != nil {
-
-		date, err = time.Parse(config.TIME_FORMAT_2, measurers[0].Date)
-
-		if err != nil {
-			config.ErrorLogger.Println("Failed to parte date from dynamo record: ", err)
-			return nil, err
-		}
-
+		return nil, err
 	}
 
 	metadata := &models.MeasurementMetadata{}
@@ -138,14 +131,7 @@ func (m *MeasurersService) GetBySerial(serial string) ([]*models.Measurement, in
 		date, err = time.Parse(config.TIME_FORMAT_1, measurer.Date)
 
 		if err != nil {
-
-			date, err = time.Parse(config.TIME_FORMAT_2, measurer.Date)
-
-			if err != nil {
-				config.ErrorLogger.Println("Failed to parte date from dynamo record: ", err)
-				return nil, 0, err
-			}
-
+			return nil, 0, err
 		}
 
 		var measurerResponse *models.Measurement
