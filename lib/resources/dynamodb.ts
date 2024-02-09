@@ -7,11 +7,11 @@ export class InputSystemStackDynamoDB {
     constructor(scope: Construct) {
 
         this.inputSystemTable = new Table(scope, 'InputSystemDynamoTable', {
+            tableName: `Input-system-dynamo-measurements-table`,
             partitionKey: { name: 'id', type: AttributeType.STRING },
             sortKey: { name: 'serial', type: AttributeType.STRING },
             billingMode: BillingMode.PAY_PER_REQUEST,
             stream: StreamViewType.NEW_IMAGE,
-            tableName: `Input-system-dynamo-measurements-table`
         });
 
         new CfnOutput(scope, 'InputSystemDynamo-output', {

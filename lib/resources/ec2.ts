@@ -9,7 +9,7 @@ import { InputSystemStackQueue } from "./sqs"
 
 
 export class InputSystemStackEC2 {
-    constructor(scope: Construct, vpc: IVpc, table: Table, queue: InputSystemStackQueue) {
+    constructor(scope: Construct, vpc: IVpc, table: Table, queue: InputSystemStackQueue, apiURL: string) {
 
         const role = new Role(
             scope,
@@ -51,12 +51,20 @@ export class InputSystemStackEC2 {
             'Allows SSH access from Internet'
         )
 
+        securityGroup.addIngressRule(
+            Peer.anyIpv4(),
+            Port.tcp(8080),
+            'Measurements API'
+        )
+
         const userData = UserData.forLinux()
+
         userData.addCommands(
             'sudo su',
             `export QUEUE_NAME=${queue.getQueueName}`,
             `export DYNAMO_TABLE_NAME=${table.tableName}`,
             `export AWS_REGION=${Stack.of(scope).region}`,
+            `export API_URL=${apiURL}`,
         )
         userData.addCommands(fs.readFileSync(path.join(__dirname, `../../src/ec2/scripts/run.sh`), 'utf8'))
 
@@ -75,8 +83,6 @@ export class InputSystemStackEC2 {
             userDataCausesReplacement: true,
             keyName: 'ec2-input-system-instance-1-key'
         })
-
-
 
         new CfnOutput(scope, 'InputSystemEC2-output', {
             value: instance.instancePublicIp

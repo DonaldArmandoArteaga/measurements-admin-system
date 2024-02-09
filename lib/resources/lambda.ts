@@ -4,7 +4,6 @@ import { IVpc, SecurityGroup, SubnetType } from "aws-cdk-lib/aws-ec2";
 import { Runtime, StartingPosition } from "aws-cdk-lib/aws-lambda";
 import { DynamoEventSource } from "aws-cdk-lib/aws-lambda-event-sources";
 import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
-import { DatabaseInstance } from "aws-cdk-lib/aws-rds";
 import { Construct } from "constructs";
 import * as path from 'path';
 export class InputSystemStackLambda {

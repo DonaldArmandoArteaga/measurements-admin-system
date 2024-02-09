@@ -5,6 +5,7 @@ import { Construct } from "constructs";
 import { InputSystemStackQueue } from "./sqs";
 
 export class InputSystemStackAPIGateway {
+    private readonly apiV1: RestApi
     constructor(scope: Construct, inputSystemStackQueue: InputSystemStackQueue) {
 
         const credentialsRole = new Role(scope, "Role-apigateway", {
@@ -46,14 +47,19 @@ export class InputSystemStackAPIGateway {
             },
         });
 
-        const api = new RestApi(scope, 'InputSystemGateway');
-        const v1 = api.root.addResource('v1');
+        this.apiV1 = new RestApi(scope, 'InputSystemGateway');
+        const v1 = this.apiV1.root.addResource('v1');
         const books = v1.addResource('input-data');
         books.addMethod('POST', inputGatewayIntegratedInputQueue, { methodResponses: [{ statusCode: "202" }] });
 
 
         new CfnOutput(scope, 'InputSystemApiGateway-output', {
-            value: api.url
+            value: this.apiV1.url
         })
+    }
+
+
+    get ApiURL(): string {
+        return this.apiV1.url
     }
 }

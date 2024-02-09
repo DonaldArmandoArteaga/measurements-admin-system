@@ -67,7 +67,7 @@ func (m *MeasurersService) GetById(id string) (*models.Measurement, error) {
 		return nil, err
 	}
 
-	date, err := time.Parse(config.TIME_FORMAT_1, measurers[0].Date)
+	date, err := time.Parse(config.TIME_FORMAT, measurers[0].Date)
 
 	if err != nil {
 		return nil, err
@@ -128,7 +128,7 @@ func (m *MeasurersService) GetBySerial(serial string) ([]*models.Measurement, in
 
 	for _, measurer := range measurersFromDynamo {
 
-		date, err = time.Parse(config.TIME_FORMAT_1, measurer.Date)
+		date, err = time.Parse(config.TIME_FORMAT, measurer.Date)
 
 		if err != nil {
 			return nil, 0, err
